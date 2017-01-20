@@ -16,12 +16,12 @@ folders:
       to: "/home/vagrant/affinitas"
 
 sites:
-    - map: 192.168.10.10
+    - map: affinitas.machine
       to: "/home/vagrant/affinitas/web"
       type: symfony
 
 databases:
-    - homestead
+    - affinitas
 
 # blackfire:
 #     - id: foo
