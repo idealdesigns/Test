@@ -6,18 +6,19 @@ hostname: affinitas
 name: affinitas
 provider: virtualbox
 
-authorize: ~/.ssh/id_rsa.pub
+authorize: C:\Users\abkr\.ssh\id_rsa.pub
 
 keys:
-    - ~/.ssh/id_rsa
+    - C:\Users\abkr\.ssh\id_rsa
 
 folders:
     - map: "D:/affinitas"
       to: "/home/vagrant/affinitas"
 
 sites:
-    - map: homestead.app
-      to: "/home/vagrant/affinitas/public"
+    - map: 192.168.10.10
+      to: "/home/vagrant/affinitas/web"
+      type: symfony
 
 databases:
     - homestead
