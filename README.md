@@ -21,6 +21,7 @@ Will validate Sudoku board plus check if the board is finished by checking for e
 
 
  Suduko board json array must be in this format:
+ Each array represents a full row from 0 to 8.
 ```json
 {
 	"board": [{
