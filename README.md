@@ -1,69 +1,207 @@
-Symfony Standard Edition
+Symfony test
 ========================
 
-Welcome to the Symfony Standard Edition - a fully-functional Symfony
-application that you can use as the skeleton for your new applications.
+There are two api endpoints:
 
-For details on how to download and get started with Symfony, see the
-[Installation][1] chapter of the Symfony Documentation.
+1- /api/validate
 
-What's inside?
---------------
+POST Accepts json array of Sudoku board.
 
-The Symfony Standard Edition is configured with the following defaults:
+RETURNS 204 No Content
 
-  * An AppBundle you can use to start coding;
+Will validate Sudoku board 
 
-  * Twig as the only configured template engine;
+2- /api/finished
 
-  * Doctrine ORM/DBAL;
+POST Accepts json array of Sudoku board.
 
-  * Swiftmailer;
+RETURNS 204 No Content
 
-  * Annotations enabled for everything.
+Will validate Sudoku board plus check if the board is finished by checking for empty cells.
 
-It comes pre-configured with the following bundles:
 
-  * **FrameworkBundle** - The core Symfony framework bundle
+ Suduko board json array must be in this format:
+ Each array represents a full row from 0 to 8.
+```json
+{
+	"board": [{
+			"0": 7,
+			"1": null,
+			"2": null,
+			"3": null,
+			"4": 4,
+			"5": null,
+			"6": 5,
+			"7": 3,
+			"8": null
+		},
 
-  * [**SensioFrameworkExtraBundle**][6] - Adds several enhancements, including
-    template and routing annotation capability
+		{
+			"0": null,
+			"1": null,
+			"2": 5,
+			"3": null,
+			"4": null,
+			"5": 8,
+			"6": null,
+			"7": 1,
+			"8": null
+		}, {
+			"0": null,
+			"1": null,
+			"2": 8,
+			"3": 5,
+			"4": null,
+			"5": 9,
+			"6": null,
+			"7": 4,
+			"8": null
+		}, {
+			"0": 5,
+			"1": 3,
+			"2": 9,
+			"3": null,
+			"4": 6,
+			"5": null,
+			"6": null,
+			"7": null,
+			"8": 1
+		}, {
+			"0": null,
+			"1": null,
+			"2": null,
+			"3": null,
+			"4": 1,
+			"5": null,
+			"6": null,
+			"7": null,
+			"8": 5
+		},
 
-  * [**DoctrineBundle**][7] - Adds support for the Doctrine ORM
+		{
+			"0": 8,
+			"1": null,
+			"2": null,
+			"3": 7,
+			"4": 2,
+			"5": null,
+			"6": 9,
+			"7": null,
+			"8": null
+		},
 
-  * [**TwigBundle**][8] - Adds support for the Twig templating engine
+		{
+			"0": 9,
+			"1": null,
+			"2": 7,
+			"3": 4,
+			"4": null,
+			"5": null,
+			"6": null,
+			"7": null,
+			"8": null
+		},
 
-  * [**SecurityBundle**][9] - Adds security by integrating Symfony's security
-    component
+		{
+			"0": null,
+			"1": null,
+			"2": null,
+			"3": null,
+			"4": 5,
+			"5": 7,
+			"6": null,
+			"7": null,
+			"8": null
+		},
 
-  * [**SwiftmailerBundle**][10] - Adds support for Swiftmailer, a library for
-    sending emails
+		{
+			"0": 6,
+			"1": null,
+			"2": null,
+			"3": null,
+			"4": null,
+			"5": null,
+			"6": null,
+			"7": 5,
+			"8": null
+		}
 
-  * [**MonologBundle**][11] - Adds support for Monolog, a logging library
+	]
+}
+```
 
-  * **WebProfilerBundle** (in dev/test env) - Adds profiling functionality and
-    the web debug toolbar
+Vagrant
+========================
 
-  * **SensioDistributionBundle** (in dev/test env) - Adds functionality for
-    configuring and working with Symfony distributions
+Vagrant Homestead Per Project installation is used:
 
-  * [**SensioGeneratorBundle**][13] (in dev/test env) - Adds code generation
-    capabilities
+https://laravel.com/docs/5.3/homestead#per-project-installation
 
-  * **DebugBundle** (in dev/test env) - Adds Debug and VarDumper component
-    integration
+After running composer install run vagrant up.If any errors delete Homestead.yaml and Vagrantfile and /vendor/laravel/homestead then follow the instructions in:
 
-All libraries and bundles included in the Symfony Standard Edition are
-released under the MIT or BSD license.
+https://laravel.com/docs/5.3/homestead#per-project-installation
 
-Enjoy!
 
-[1]:  https://symfony.com/doc/3.2/setup.html
-[6]:  https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/index.html
-[7]:  https://symfony.com/doc/3.2/doctrine.html
-[8]:  https://symfony.com/doc/3.2/templating.html
-[9]:  https://symfony.com/doc/3.2/security.html
-[10]: https://symfony.com/doc/3.2/email.html
-[11]: https://symfony.com/doc/3.2/logging.html
-[12]: https://symfony.com/doc/3.2/assetic/asset_management.html
-[13]: https://symfony.com/doc/current/bundles/SensioGeneratorBundle/index.html
+
+Postman example
+========================
+Import the json in Postman app:
+```json
+{
+	"id": "810a8dab-55c0-9efa-87a1-31aaf48fcf56",
+	"name": "Affinitas",
+	"description": "",
+	"order": [
+		"c2fb61ad-f8fe-ed03-6e6f-3314f747a43a",
+		"3c4748a7-773d-4c34-9cd7-a532f09013a9"
+	],
+	"folders": [],
+	"timestamp": 1484926727914,
+	"owner": 0,
+	"public": false,
+	"requests": [
+		{
+			"id": "3c4748a7-773d-4c34-9cd7-a532f09013a9",
+			"headers": "Content-Type: application/json\n",
+			"url": "http://affinitas.machine/api/finished",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1484961332082,
+			"name": "isSudokuFinished",
+			"description": "",
+			"collectionId": "810a8dab-55c0-9efa-87a1-31aaf48fcf56",
+			"responses": [],
+			"rawModeData": "{\r\n\t\"board\": [{\r\n\t\t\t\"0\": 7,\r\n\t\t\t\"1\": null,\r\n\t\t\t\"2\": null,\r\n\t\t\t\"3\": null,\r\n\t\t\t\"4\": 4,\r\n\t\t\t\"5\": null,\r\n\t\t\t\"6\": 5,\r\n\t\t\t\"7\": 3,\r\n\t\t\t\"8\": null\r\n\t\t},\r\n\r\n\t\t{\r\n\t\t\t\"0\": null,\r\n\t\t\t\"1\": null,\r\n\t\t\t\"2\": 5,\r\n\t\t\t\"3\": null,\r\n\t\t\t\"4\": null,\r\n\t\t\t\"5\": 8,\r\n\t\t\t\"6\": null,\r\n\t\t\t\"7\": 1,\r\n\t\t\t\"8\": null\r\n\t\t}, {\r\n\t\t\t\"0\": null,\r\n\t\t\t\"1\": null,\r\n\t\t\t\"2\": 8,\r\n\t\t\t\"3\": 5,\r\n\t\t\t\"4\": null,\r\n\t\t\t\"5\": 9,\r\n\t\t\t\"6\": null,\r\n\t\t\t\"7\": 4,\r\n\t\t\t\"8\": null\r\n\t\t}, {\r\n\t\t\t\"0\": 5,\r\n\t\t\t\"1\": 3,\r\n\t\t\t\"2\": 9,\r\n\t\t\t\"3\": null,\r\n\t\t\t\"4\": 6,\r\n\t\t\t\"5\": null,\r\n\t\t\t\"6\": null,\r\n\t\t\t\"7\": null,\r\n\t\t\t\"8\": 1\r\n\t\t}, {\r\n\t\t\t\"0\": null,\r\n\t\t\t\"1\": null,\r\n\t\t\t\"2\": null,\r\n\t\t\t\"3\": null,\r\n\t\t\t\"4\": 1,\r\n\t\t\t\"5\": null,\r\n\t\t\t\"6\": null,\r\n\t\t\t\"7\": null,\r\n\t\t\t\"8\": 5\r\n\t\t},\r\n\r\n\t\t{\r\n\t\t\t\"0\": 8,\r\n\t\t\t\"1\": null,\r\n\t\t\t\"2\": null,\r\n\t\t\t\"3\": 7,\r\n\t\t\t\"4\": 2,\r\n\t\t\t\"5\": null,\r\n\t\t\t\"6\": 9,\r\n\t\t\t\"7\": null,\r\n\t\t\t\"8\": null\r\n\t\t},\r\n\r\n\t\t{\r\n\t\t\t\"0\": 9,\r\n\t\t\t\"1\": null,\r\n\t\t\t\"2\": 7,\r\n\t\t\t\"3\": 4,\r\n\t\t\t\"4\": null,\r\n\t\t\t\"5\": null,\r\n\t\t\t\"6\": null,\r\n\t\t\t\"7\": null,\r\n\t\t\t\"8\": null\r\n\t\t},\r\n\r\n\t\t{\r\n\t\t\t\"0\": null,\r\n\t\t\t\"1\": null,\r\n\t\t\t\"2\": null,\r\n\t\t\t\"3\": null,\r\n\t\t\t\"4\": 5,\r\n\t\t\t\"5\": 7,\r\n\t\t\t\"6\": null,\r\n\t\t\t\"7\": null,\r\n\t\t\t\"8\": null\r\n\t\t},\r\n\r\n\t\t{\r\n\t\t\t\"0\": 6,\r\n\t\t\t\"1\": null,\r\n\t\t\t\"2\": null,\r\n\t\t\t\"3\": null,\r\n\t\t\t\"4\": null,\r\n\t\t\t\"5\": null,\r\n\t\t\t\"6\": null,\r\n\t\t\t\"7\": 5,\r\n\t\t\t\"8\": null\r\n\t\t}\r\n\r\n\t]\r\n}"
+		},
+		{
+			"id": "c2fb61ad-f8fe-ed03-6e6f-3314f747a43a",
+			"headers": "Content-Type: application/json\n",
+			"url": "http://affinitas.machine/api/validate",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1484961327977,
+			"name": "Validate Soduko",
+			"description": "",
+			"collectionId": "810a8dab-55c0-9efa-87a1-31aaf48fcf56",
+			"responses": [],
+			"rawModeData": "{\r\n\t\"board\": [{\r\n\t\t\t\"0\": 7,\r\n\t\t\t\"1\": null,\r\n\t\t\t\"2\": null,\r\n\t\t\t\"3\": null,\r\n\t\t\t\"4\": 4,\r\n\t\t\t\"5\": null,\r\n\t\t\t\"6\": 5,\r\n\t\t\t\"7\": 3,\r\n\t\t\t\"8\": null\r\n\t\t},\r\n\r\n\t\t{\r\n\t\t\t\"0\": null,\r\n\t\t\t\"1\": null,\r\n\t\t\t\"2\": 5,\r\n\t\t\t\"3\": null,\r\n\t\t\t\"4\": null,\r\n\t\t\t\"5\": 8,\r\n\t\t\t\"6\": null,\r\n\t\t\t\"7\": 1,\r\n\t\t\t\"8\": null\r\n\t\t}, {\r\n\t\t\t\"0\": null,\r\n\t\t\t\"1\": null,\r\n\t\t\t\"2\": 8,\r\n\t\t\t\"3\": 5,\r\n\t\t\t\"4\": null,\r\n\t\t\t\"5\": 9,\r\n\t\t\t\"6\": null,\r\n\t\t\t\"7\": 4,\r\n\t\t\t\"8\": null\r\n\t\t}, {\r\n\t\t\t\"0\": 5,\r\n\t\t\t\"1\": 3,\r\n\t\t\t\"2\": 9,\r\n\t\t\t\"3\": null,\r\n\t\t\t\"4\": 6,\r\n\t\t\t\"5\": null,\r\n\t\t\t\"6\": null,\r\n\t\t\t\"7\": null,\r\n\t\t\t\"8\": 1\r\n\t\t}, {\r\n\t\t\t\"0\": null,\r\n\t\t\t\"1\": null,\r\n\t\t\t\"2\": null,\r\n\t\t\t\"3\": null,\r\n\t\t\t\"4\": 1,\r\n\t\t\t\"5\": null,\r\n\t\t\t\"6\": null,\r\n\t\t\t\"7\": null,\r\n\t\t\t\"8\": 5\r\n\t\t},\r\n\r\n\t\t{\r\n\t\t\t\"0\": 8,\r\n\t\t\t\"1\": null,\r\n\t\t\t\"2\": null,\r\n\t\t\t\"3\": 7,\r\n\t\t\t\"4\": 2,\r\n\t\t\t\"5\": null,\r\n\t\t\t\"6\": 9,\r\n\t\t\t\"7\": null,\r\n\t\t\t\"8\": null\r\n\t\t},\r\n\r\n\t\t{\r\n\t\t\t\"0\": 9,\r\n\t\t\t\"1\": null,\r\n\t\t\t\"2\": 7,\r\n\t\t\t\"3\": 4,\r\n\t\t\t\"4\": null,\r\n\t\t\t\"5\": null,\r\n\t\t\t\"6\": null,\r\n\t\t\t\"7\": null,\r\n\t\t\t\"8\": null\r\n\t\t},\r\n\r\n\t\t{\r\n\t\t\t\"0\": null,\r\n\t\t\t\"1\": null,\r\n\t\t\t\"2\": null,\r\n\t\t\t\"3\": null,\r\n\t\t\t\"4\": 5,\r\n\t\t\t\"5\": 7,\r\n\t\t\t\"6\": null,\r\n\t\t\t\"7\": null,\r\n\t\t\t\"8\": null\r\n\t\t},\r\n\r\n\t\t{\r\n\t\t\t\"0\": 6,\r\n\t\t\t\"1\": null,\r\n\t\t\t\"2\": null,\r\n\t\t\t\"3\": null,\r\n\t\t\t\"4\": null,\r\n\t\t\t\"5\": null,\r\n\t\t\t\"6\": null,\r\n\t\t\t\"7\": 5,\r\n\t\t\t\"8\": null\r\n\t\t}\r\n\r\n\t]\r\n}"
+		}
+	]
+}
+```
+
+
+ 
