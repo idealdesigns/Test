@@ -128,4 +128,17 @@ Will validate Sudoku board plus check if the board is finished by checking for e
 	]
 }
 ```
+
+Vagrant
+========================
+
+Vagrant Homestead Per Project installation is used:
+
+https://laravel.com/docs/5.3/homestead#per-project-installation
+
+After running composer install run vagrant up.If any errors delete Homestead.yaml and Vagrantfile and /vendor/laravel/homestead then follow the instructions in:
+
+https://laravel.com/docs/5.3/homestead#per-project-installation
+
+
  
