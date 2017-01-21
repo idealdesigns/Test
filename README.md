@@ -142,4 +142,66 @@ After running composer install run vagrant up.If any errors delete Homestead.yam
 https://laravel.com/docs/5.3/homestead#per-project-installation
 
 
+
+Postman example
+========================
+Import the json in Postman app:
+```json
+{
+	"id": "810a8dab-55c0-9efa-87a1-31aaf48fcf56",
+	"name": "Affinitas",
+	"description": "",
+	"order": [
+		"c2fb61ad-f8fe-ed03-6e6f-3314f747a43a",
+		"3c4748a7-773d-4c34-9cd7-a532f09013a9"
+	],
+	"folders": [],
+	"timestamp": 1484926727914,
+	"owner": 0,
+	"public": false,
+	"requests": [
+		{
+			"id": "3c4748a7-773d-4c34-9cd7-a532f09013a9",
+			"headers": "Content-Type: application/json\n",
+			"url": "http://affinitas.machine/api/finished",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1484961332082,
+			"name": "isSudokuFinished",
+			"description": "",
+			"collectionId": "810a8dab-55c0-9efa-87a1-31aaf48fcf56",
+			"responses": [],
+			"rawModeData": "{\r\n\t\"board\": [{\r\n\t\t\t\"0\": 7,\r\n\t\t\t\"1\": null,\r\n\t\t\t\"2\": null,\r\n\t\t\t\"3\": null,\r\n\t\t\t\"4\": 4,\r\n\t\t\t\"5\": null,\r\n\t\t\t\"6\": 5,\r\n\t\t\t\"7\": 3,\r\n\t\t\t\"8\": null\r\n\t\t},\r\n\r\n\t\t{\r\n\t\t\t\"0\": null,\r\n\t\t\t\"1\": null,\r\n\t\t\t\"2\": 5,\r\n\t\t\t\"3\": null,\r\n\t\t\t\"4\": null,\r\n\t\t\t\"5\": 8,\r\n\t\t\t\"6\": null,\r\n\t\t\t\"7\": 1,\r\n\t\t\t\"8\": null\r\n\t\t}, {\r\n\t\t\t\"0\": null,\r\n\t\t\t\"1\": null,\r\n\t\t\t\"2\": 8,\r\n\t\t\t\"3\": 5,\r\n\t\t\t\"4\": null,\r\n\t\t\t\"5\": 9,\r\n\t\t\t\"6\": null,\r\n\t\t\t\"7\": 4,\r\n\t\t\t\"8\": null\r\n\t\t}, {\r\n\t\t\t\"0\": 5,\r\n\t\t\t\"1\": 3,\r\n\t\t\t\"2\": 9,\r\n\t\t\t\"3\": null,\r\n\t\t\t\"4\": 6,\r\n\t\t\t\"5\": null,\r\n\t\t\t\"6\": null,\r\n\t\t\t\"7\": null,\r\n\t\t\t\"8\": 1\r\n\t\t}, {\r\n\t\t\t\"0\": null,\r\n\t\t\t\"1\": null,\r\n\t\t\t\"2\": null,\r\n\t\t\t\"3\": null,\r\n\t\t\t\"4\": 1,\r\n\t\t\t\"5\": null,\r\n\t\t\t\"6\": null,\r\n\t\t\t\"7\": null,\r\n\t\t\t\"8\": 5\r\n\t\t},\r\n\r\n\t\t{\r\n\t\t\t\"0\": 8,\r\n\t\t\t\"1\": null,\r\n\t\t\t\"2\": null,\r\n\t\t\t\"3\": 7,\r\n\t\t\t\"4\": 2,\r\n\t\t\t\"5\": null,\r\n\t\t\t\"6\": 9,\r\n\t\t\t\"7\": null,\r\n\t\t\t\"8\": null\r\n\t\t},\r\n\r\n\t\t{\r\n\t\t\t\"0\": 9,\r\n\t\t\t\"1\": null,\r\n\t\t\t\"2\": 7,\r\n\t\t\t\"3\": 4,\r\n\t\t\t\"4\": null,\r\n\t\t\t\"5\": null,\r\n\t\t\t\"6\": null,\r\n\t\t\t\"7\": null,\r\n\t\t\t\"8\": null\r\n\t\t},\r\n\r\n\t\t{\r\n\t\t\t\"0\": null,\r\n\t\t\t\"1\": null,\r\n\t\t\t\"2\": null,\r\n\t\t\t\"3\": null,\r\n\t\t\t\"4\": 5,\r\n\t\t\t\"5\": 7,\r\n\t\t\t\"6\": null,\r\n\t\t\t\"7\": null,\r\n\t\t\t\"8\": null\r\n\t\t},\r\n\r\n\t\t{\r\n\t\t\t\"0\": 6,\r\n\t\t\t\"1\": null,\r\n\t\t\t\"2\": null,\r\n\t\t\t\"3\": null,\r\n\t\t\t\"4\": null,\r\n\t\t\t\"5\": null,\r\n\t\t\t\"6\": null,\r\n\t\t\t\"7\": 5,\r\n\t\t\t\"8\": null\r\n\t\t}\r\n\r\n\t]\r\n}"
+		},
+		{
+			"id": "c2fb61ad-f8fe-ed03-6e6f-3314f747a43a",
+			"headers": "Content-Type: application/json\n",
+			"url": "http://affinitas.machine/api/validate",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1484961327977,
+			"name": "Validate Soduko",
+			"description": "",
+			"collectionId": "810a8dab-55c0-9efa-87a1-31aaf48fcf56",
+			"responses": [],
+			"rawModeData": "{\r\n\t\"board\": [{\r\n\t\t\t\"0\": 7,\r\n\t\t\t\"1\": null,\r\n\t\t\t\"2\": null,\r\n\t\t\t\"3\": null,\r\n\t\t\t\"4\": 4,\r\n\t\t\t\"5\": null,\r\n\t\t\t\"6\": 5,\r\n\t\t\t\"7\": 3,\r\n\t\t\t\"8\": null\r\n\t\t},\r\n\r\n\t\t{\r\n\t\t\t\"0\": null,\r\n\t\t\t\"1\": null,\r\n\t\t\t\"2\": 5,\r\n\t\t\t\"3\": null,\r\n\t\t\t\"4\": null,\r\n\t\t\t\"5\": 8,\r\n\t\t\t\"6\": null,\r\n\t\t\t\"7\": 1,\r\n\t\t\t\"8\": null\r\n\t\t}, {\r\n\t\t\t\"0\": null,\r\n\t\t\t\"1\": null,\r\n\t\t\t\"2\": 8,\r\n\t\t\t\"3\": 5,\r\n\t\t\t\"4\": null,\r\n\t\t\t\"5\": 9,\r\n\t\t\t\"6\": null,\r\n\t\t\t\"7\": 4,\r\n\t\t\t\"8\": null\r\n\t\t}, {\r\n\t\t\t\"0\": 5,\r\n\t\t\t\"1\": 3,\r\n\t\t\t\"2\": 9,\r\n\t\t\t\"3\": null,\r\n\t\t\t\"4\": 6,\r\n\t\t\t\"5\": null,\r\n\t\t\t\"6\": null,\r\n\t\t\t\"7\": null,\r\n\t\t\t\"8\": 1\r\n\t\t}, {\r\n\t\t\t\"0\": null,\r\n\t\t\t\"1\": null,\r\n\t\t\t\"2\": null,\r\n\t\t\t\"3\": null,\r\n\t\t\t\"4\": 1,\r\n\t\t\t\"5\": null,\r\n\t\t\t\"6\": null,\r\n\t\t\t\"7\": null,\r\n\t\t\t\"8\": 5\r\n\t\t},\r\n\r\n\t\t{\r\n\t\t\t\"0\": 8,\r\n\t\t\t\"1\": null,\r\n\t\t\t\"2\": null,\r\n\t\t\t\"3\": 7,\r\n\t\t\t\"4\": 2,\r\n\t\t\t\"5\": null,\r\n\t\t\t\"6\": 9,\r\n\t\t\t\"7\": null,\r\n\t\t\t\"8\": null\r\n\t\t},\r\n\r\n\t\t{\r\n\t\t\t\"0\": 9,\r\n\t\t\t\"1\": null,\r\n\t\t\t\"2\": 7,\r\n\t\t\t\"3\": 4,\r\n\t\t\t\"4\": null,\r\n\t\t\t\"5\": null,\r\n\t\t\t\"6\": null,\r\n\t\t\t\"7\": null,\r\n\t\t\t\"8\": null\r\n\t\t},\r\n\r\n\t\t{\r\n\t\t\t\"0\": null,\r\n\t\t\t\"1\": null,\r\n\t\t\t\"2\": null,\r\n\t\t\t\"3\": null,\r\n\t\t\t\"4\": 5,\r\n\t\t\t\"5\": 7,\r\n\t\t\t\"6\": null,\r\n\t\t\t\"7\": null,\r\n\t\t\t\"8\": null\r\n\t\t},\r\n\r\n\t\t{\r\n\t\t\t\"0\": 6,\r\n\t\t\t\"1\": null,\r\n\t\t\t\"2\": null,\r\n\t\t\t\"3\": null,\r\n\t\t\t\"4\": null,\r\n\t\t\t\"5\": null,\r\n\t\t\t\"6\": null,\r\n\t\t\t\"7\": 5,\r\n\t\t\t\"8\": null\r\n\t\t}\r\n\r\n\t]\r\n}"
+		}
+	]
+}
+```
+
+
  
