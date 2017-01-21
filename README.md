@@ -2,6 +2,11 @@ Symfony test
 ========================
 Simple web service without content negotiation and versioning.
 
+The algorithem checks for:
+- duplicate numbers on each row
+- duplicate numbers on each column
+- duplicate numbers on each box (cube)
+
 There are two api endpoints:
 
 1- /api/validate
