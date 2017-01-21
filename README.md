@@ -1,5 +1,6 @@
 Symfony test
 ========================
+Simple web service without content negotiation and versioning.
 
 There are two api endpoints:
 
