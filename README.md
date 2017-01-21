@@ -136,6 +136,11 @@ Will validate Sudoku board plus check if the board is finished by checking for e
 }
 ```
 
+PHPUnit Tests
+========================
+In \tests\AppBundle\Entity a file named "SudokuTest.php" which contains unit tests for the entity Sudoku.php
+To Run the tests execute in CLI 'phpunit --testdox --filter="Sudoku"'
+
 Vagrant
 ========================
 
