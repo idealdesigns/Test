@@ -5,14 +5,17 @@ There are two api endpoints:
 
 1- /api/validate
 
-Will validate Sudoku board 
-
 POST Accepts json array of Sudoku board.
 
+RETURNS 204 No Content
+
+Will validate Sudoku board 
 
 2- /api/finished
 
 POST Accepts json array of Sudoku board.
+
+RETURNS 204 No Content
 
 Will validate Sudoku board plus check if the board is finished by checking for empty cells.
 
