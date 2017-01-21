@@ -23,6 +23,8 @@ class DefaultController extends Controller
 
     /**
      * @Route("/print", name="print")
+     *
+     * Test function to print Sudoku in a table
      */
     public function printSudoku(Request $request)
     {
@@ -146,8 +148,6 @@ class DefaultController extends Controller
 
         $output.="</table>";
         $output .= "<hr />";
-
-        print_r($output);exit;
 
         return new Response($output);
     }

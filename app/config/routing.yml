@@ -5,7 +5,7 @@ app:
 
 
 soduko:
-    resource: "@AppBundle/Controller/SodukoController.php"
+    resource: "@AppBundle/Controller/SudokuController.php"
     type:     annotation
     prefix: /api
 

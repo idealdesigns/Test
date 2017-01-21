@@ -2,17 +2,16 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\Entity\Soduko;
+use AppBundle\Entity\Sudoku;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 
 
-class SodukoController extends Controller
+class SudokuController extends Controller
 {
     /**
      * @Route("/validate",name="validate")
@@ -21,15 +20,13 @@ class SodukoController extends Controller
      *
      * @return JsonResponse
      */
-    public function validateSodukuAction(Request $request)
+    public function validateSudokuAction(Request $request)
     {
         $board = $request->request->get("board");
-
-        Soduko::validate($board);
+        Sudoku::validate($board);
 
         return new JsonResponse(null,204);
     }
-
 
     /**
      * @Route("/finished",name="finished")
@@ -37,10 +34,10 @@ class SodukoController extends Controller
      * @param Request $request
      * @return JsonResponse
      */
-    public function isSudukoFinishedAction(Request $request)
+    public function isSudokuFinishedAction(Request $request)
     {
         $board = $request->request->get("board");
-        Soduko::isSudokuFinished($board);
+        Sudoku::isSudokuFinished($board);
 
         return new JsonResponse(null,204);
     }
